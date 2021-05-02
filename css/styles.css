@@ -208,6 +208,7 @@ ul {
   max-width: 1600px;
   text-align: center;
   padding-top: 200px;
+  margin: auto;
 }
 .main-header-title {
   font-weight: 900;
@@ -234,10 +235,6 @@ ul {
 /* ===== END SEKCJA "HEADER" ===== */
 
 /* ===== OKNO MODALNE =====*/
-.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-}
 .modal-backdrop {
   position: fixed;
   z-index: 2;
@@ -246,24 +243,28 @@ ul {
   background-color: rgba(0, 0, 0, 0.2);
   height: 100%;
   width: 100%;
-  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  transition-property: opacity, visibility;
+  transition-duration: 300ms;
+  transition-timing-function: linear;
 }
 .modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
   background: var(--third-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
-              0px 1px 1px rgba(0, 0, 0, 0.14),
-              0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   padding: 8px;
-  opacity: 1;
 }
-
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 .modal-icon-close-ellipse {
   display: flex;
   align-items: center;
